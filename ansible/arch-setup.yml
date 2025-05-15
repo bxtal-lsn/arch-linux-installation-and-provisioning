@@ -1,10 +1,11 @@
 ---
-- name: Install packages with pacman on Arch Linux
+- name: Setup Arch Linux with pacman packages and curl installations
   hosts: localhost
   become: true
   
   vars_files:
     - pacman.yml
+    - curl.yml
   
   tasks:
     - name: Update package cache and upgrade all packages
@@ -26,3 +27,7 @@
     - name: Display installation results
       debug:
         msg: "Installed packages: {{ install_result.stdout_lines | default('No output') }}"
+    
+    - name: Run curl installations
+      shell: "{{ item }}"
+      loop: "{{ curl_commands }}"

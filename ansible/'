@@ -1,0 +1,3 @@
+---
+curl_commands:
+  - "curl -sSf https://atlasgo.sh | sh -s -- --community"
