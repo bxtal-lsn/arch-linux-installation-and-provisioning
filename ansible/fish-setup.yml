@@ -1,0 +1,28 @@
+---
+- name: Configure Fish shell with Fisher packages
+  hosts: localhost
+  become: true 
+  
+  vars:
+    fisher_packages:
+      - IlanCosman/tide@v6
+      - kidonng/zoxide.fish
+    fish_user: "{{ ansible_user_id }}"
+    fish_config_dir: "~/.config/fish"
+  
+  tasks:
+    - name: Install fisher using pacman
+      community.general.pacman:
+        name: fisher
+        state: present
+        update_cache: yes
+      become: true
+      
+    - name: Install Fisher packages
+      shell: fisher install {{ item }}
+      args:
+        executable: /usr/bin/fish
+      loop: "{{ fisher_packages }}"
+      register: fisher_result
+      changed_when: "'Installing' in fisher_result.stdout"
+      become: false

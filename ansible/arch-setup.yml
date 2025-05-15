@@ -1,0 +1,28 @@
+---
+- name: Install packages with pacman on Arch Linux
+  hosts: localhost
+  become: true
+  
+  vars_files:
+    - pacman.yml
+  
+  tasks:
+    - name: Update package cache and upgrade all packages
+      community.general.pacman:
+        update_cache: yes
+        upgrade: yes
+      register: upgrade_result
+      
+    - name: Display upgrade results
+      debug:
+        msg: "Upgraded packages: {{ upgrade_result.stdout_lines | default('No output') }}"
+        
+    - name: Install specified packages with pacman
+      community.general.pacman:
+        name: "{{ packages }}"
+        state: present
+      register: install_result
+      
+    - name: Display installation results
+      debug:
+        msg: "Installed packages: {{ install_result.stdout_lines | default('No output') }}"

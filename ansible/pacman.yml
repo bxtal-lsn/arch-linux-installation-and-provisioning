@@ -1,0 +1,44 @@
+---
+
+packages:
+# Shell and Terminal Enhancement
+ - fish
+ - fisher
+ - direnv
+ - fzf
+ - fd
+ - tree
+ - bat
+ - eza
+ - atuin
+ - zoxide
+# Container Tools
+ - podman
+# Text Editors
+ - neovim
+# Development Tools
+ - ripgrep
+ - git
+ - go
+ - gcc
+ - clang
+ - zig
+ - stylua
+# - go-task
+ - jujutsu
+# System and Network Utilities
+ - curl
+# - rsync
+ - which
+ - sudo
+# - htop
+# - wget
+ - openssh
+ - openssl
+ - pkg-config
+ - glibc
+ - unzip
+ - stow
+# Database
+ - sqlite
+# - postgresql
