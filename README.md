@@ -8,7 +8,11 @@
 * Boot image
 * Run `loadkeys dk`
 * Run `iwctl`
+* Run `device list`
+* Run `station wlan0 scan` and nothing will show until running `station wlan0 get-networks`
 * Run `station wlan0 connect <wifi name>`
+* press `CTRL + D` to exit `iwctl`
+* check if the internet connection is available with `ping google.com`
 * When connected to internet run `archinstall`
   * Choose desktop environment
   * Let the computer select the partitioning?
