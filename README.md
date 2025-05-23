@@ -86,7 +86,7 @@ sync yaourt with `yaourt -Syy`
 clone the arch setup with ansible repository
 
 ``````shell
-git clone git@github.com:bxtal-lsn/arch-linux-installation-and-provisioning.gSit
+git clone git@github.com:bxtal-lsn/arch-linux-installation-and-provisioning.git
 ``````
 
 cd into `ansible`
@@ -97,16 +97,4 @@ cd into `ansible`
 
 First, run `ansible-playbook arch-setup.yml` 
 Then run `ansible-playbook fish-setup.yml`
-
-
-
-
-
-
-
-
-
-
-
-
 

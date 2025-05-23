@@ -17,6 +17,7 @@ packages:
 # Text Editors
  - neovim
 # Development Tools
+ - chezmoi
  - ripgrep
  - git
  - go
