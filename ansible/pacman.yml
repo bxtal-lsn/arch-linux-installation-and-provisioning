@@ -1,7 +1,8 @@
 ---
-
 packages:
-# Shell and Terminal Enhancement
+# ------------------------------ #
+# Shell and Terminal Enhancement #
+# ------------------------------ #
  - fish
  - fisher
  - direnv
@@ -12,11 +13,21 @@ packages:
  - eza
  - atuin
  - zoxide
-# Container Tools
+
+# --------------- #
+# Container Tools #
+# --------------- #
  - podman
-# Text Editors
+ - docker
+
+# ------------ #
+# Text Editors #
+# ------------ #
  - neovim
-# Development Tools
+
+# ----------------- #
+# Development Tools #
+# ----------------- #
  - chezmoi
  - ripgrep
  - git
@@ -25,21 +36,28 @@ packages:
  - clang
  - zig
  - stylua
-# - go-task
+ - ghostty
+ - go-task
  - jujutsu
-# System and Network Utilities
+
+# ---------------------------- #
+# System and Network Utilities #
+# ---------------------------- #
  - curl
-# - rsync
+ - rsync
  - which
  - sudo
-# - htop
-# - wget
+ - htop
+ - wget
  - openssh
  - openssl
  - pkg-config
  - glibc
  - unzip
- - stow
-# Database
+ - xclip
+
+# -------- #
+# Database #
+# -------- #
  - sqlite
-# - postgresql
+ - postgresql

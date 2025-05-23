@@ -1,0 +1,3 @@
+go_packages:
+  - github.com/go-task/task/v3/cmd/task@latest
+  - github.com/bxtal-lsn/tt@latest
