@@ -55,6 +55,8 @@ packages:
  - glibc
  - unzip
  - xclip
+ - bluez
+ - bluez-utils
 
 # -------- #
 # Database #
