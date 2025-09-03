@@ -13,6 +13,10 @@ packages:
  - eza
  - atuin
  - zoxide
+ - zsh
+ - zsh-completions
+ - zsh-syntax-highlighting
+ - zsh-autosuggestions
 
 # --------------- #
 # Container Tools #
@@ -57,9 +61,25 @@ packages:
  - xclip
  - bluez
  - bluez-utils
+ - btop
+ - impala
 
 # -------- #
 # Database #
 # -------- #
  - sqlite
  - postgresql
+
+
+# -------- #
+# Hyprland #
+# -------- #
+ - waybar
+ - hyprpaper
+
+
+# -------- #
+#   Misc   #
+# -------- #
+
+ - firefox
