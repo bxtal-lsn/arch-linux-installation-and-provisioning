@@ -14,24 +14,34 @@
         update_cache: yes
         upgrade: yes
       register: upgrade_result
+      tags: 
+        - update
       
     - name: Display upgrade results
       debug:
         msg: "Upgraded packages: {{ upgrade_result.stdout_lines | default('No output') }}"
+      tags:
+        - update
         
     - name: Install specified packages with pacman
       community.general.pacman:
         name: "{{ packages }}"
         state: present
       register: install_result
+      tags:
+        - pacman
       
     - name: Display installation results
       debug:
         msg: "Installed packages: {{ install_result.stdout_lines | default('No output') }}"
+      tags:
+        - pacman
     
     - name: Run curl installations
       shell: "{{ item }}"
       loop: "{{ curl_commands }}"
+      tags:
+        - curl
 
     - name: Install Go packages
       become: false
@@ -40,3 +50,5 @@
       environment:
         PATH: "{{ ansible_env.PATH }}:{{ ansible_env.HOME }}/go/bin"
       register: go_install_result
+      tags:
+        - go
