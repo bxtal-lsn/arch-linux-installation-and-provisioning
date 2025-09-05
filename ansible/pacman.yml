@@ -117,3 +117,11 @@ packages:
  - scdoc
  - wayland-protocols
  - glib2-devel
+  
+
+# --------------- #
+# Fonts           #
+# --------------- #
+ - ttf-cascadia-mono-nerd
+ - ttf-inconsolata-go-nerd
+ - ttf-liberation-mono-nerd
