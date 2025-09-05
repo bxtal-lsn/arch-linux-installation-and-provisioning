@@ -45,6 +45,8 @@ packages:
  - ghostty
  - go-task
  - jujutsu
+ - python-pipx
+ - uv
 
 # ---------------------------- #
 # System and Network Utilities #
