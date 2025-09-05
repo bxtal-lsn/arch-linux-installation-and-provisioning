@@ -67,6 +67,7 @@ packages:
  - bluez-utils
  - btop
  - impala
+ - tlp
 
 # -------- #
 # Database #
