@@ -28,3 +28,8 @@
   ansible.builtin.file:
     path: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
     state: absent
+
+- name: Run rootless script
+  become: false
+  ansible.builtin.shell:
+    cmd: containerd-rootless-setuptool.sh install
