@@ -84,6 +84,7 @@ packages:
 # -------- #
 
  - firefox
+ - nautilus
 
 # ----------- #
 # Waybar Deps #
