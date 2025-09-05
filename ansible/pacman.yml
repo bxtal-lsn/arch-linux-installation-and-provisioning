@@ -24,7 +24,8 @@ packages:
 # Container Tools #
 # --------------- #
  - podman
- - docker
+ - containerd
+ - nerdctl
 
 # ------------ #
 # Text Editors #

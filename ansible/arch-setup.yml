@@ -52,3 +52,13 @@
       register: go_install_result
       tags:
         - go
+
+    - name: Install git repositories
+      include_tasks: git.yml
+      tags:
+        - git
+
+    - name: Install cni plugins for containerd
+      include_tasks: cni-plugins.yml
+      tags:
+        - cni
