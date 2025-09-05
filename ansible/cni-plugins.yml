@@ -1,9 +1,30 @@
 ---
-- name: Install CNI plugins via shell
-  shell: |
-    mkdir -p /opt/cni/bin
-    cd /tmp
-    wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
-    tar -C /opt/cni/bin -xzf cni-plugins-linux-amd64-v1.1.1.tgz
-    chmod +x /opt/cni/bin/*
-    rm -f /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
+- name: create cni dir if not exists
+  ansible.builtin.file:
+    path: /opt/cni/bin
+    state: directory
+    mode: '0755'
+
+- name: Download CNI plugins
+  get_url:
+    url: https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
+    dest: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
+    mode: "0644"
+
+- name: Extract CNI plugins
+  unarchive:
+    src: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
+    dest: /opt/cni/bin
+    remote_src: true
+    creates: /opt/cni/bin/bridge
+
+- name: Set execute permissions
+  ansible.builtin.file:
+    path: /opt/cni/bin
+    mode: "0755"
+    recurse: true
+
+- name: Clean up archive
+  ansible.builtin.file:
+    path: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
+    state: absent

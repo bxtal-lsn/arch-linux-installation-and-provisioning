@@ -53,12 +53,11 @@
       tags:
         - go
 
-    - name: Install git repositories
-      include_tasks: git.yml
+    - import_tasks: git.yml
       tags:
         - git
 
-    - name: Install cni plugins for containerd
-      include_tasks: cni-plugins.yml
+    - import_tasks: cni-plugins.yml
       tags:
-        - cni
+       - cni
+

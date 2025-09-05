@@ -26,6 +26,9 @@ packages:
  - podman
  - containerd
  - nerdctl
+ - buildkit
+ - rootlesskit
+ - slirp4netns
 
 # ------------ #
 # Text Editors #
