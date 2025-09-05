@@ -18,6 +18,7 @@ packages:
  - zsh-syntax-highlighting
  - zsh-autosuggestions
  - tmux
+ - uwsm
 
 # --------------- #
 # Container Tools #
