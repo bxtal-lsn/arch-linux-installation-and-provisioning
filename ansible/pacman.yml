@@ -23,7 +23,6 @@ packages:
 # --------------- #
 # Container Tools #
 # --------------- #
- - podman
  - containerd
  - nerdctl
  - buildkit
@@ -72,6 +71,7 @@ packages:
  - btop
  - impala
  - tlp
+ - syncthing
 
 # -------- #
 # Database #
