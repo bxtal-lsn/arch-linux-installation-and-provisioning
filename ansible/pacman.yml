@@ -94,6 +94,15 @@ packages:
  - firefox
  - nautilus
 
+# -------------------- #
+#   Documents Reader   #
+# -------------------- #
+
+ - zathura
+ - girara
+ - gtk4
+ - zathura-pdf-mupdf
+
 # ----------- #
 # Waybar Deps #
 # ----------- #
