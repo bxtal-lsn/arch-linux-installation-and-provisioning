@@ -1,14 +1,28 @@
 ---
-- name: Ensure .tmux/plugins directory exists
-  file:
-    path: "{{ ansible_env.HOME }}/.tmux/plugins"
-    state: directory
-    mode: '0755'
-
-- name: Clone TPM (Tmux Plugin Manager)
+- name: Clone ohmyzsh autosuggestions plugin
   git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
-    version: master
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git 
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    force: yes
+    update: yes
+
+- name: Clone ohmyzsh syntax highlighting plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    force: yes
+    update: yes
+
+- name: Clone ohmyzsh fast syntax highlighting plugin
+  git:
+    repo: https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"
+    force: yes
+    update: yes
+
+- name: Clone ohmyzsh autocomplete plugin
+  git:
+    repo: https://github.com/marlonrichert/zsh-autocomplete.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autocomplete"
     force: yes
     update: yes

@@ -1,7 +1,6 @@
 ---
 - name: Setup Arch Linux with pacman packages and curl installations
   hosts: localhost
-  become: true
   
   vars_files:
     - pacman.yml
@@ -10,12 +9,19 @@
   
   tasks:
     - name: Update package cache and upgrade all packages
+      become: true
       community.general.pacman:
         update_cache: yes
         upgrade: yes
       register: upgrade_result
       tags: 
         - update
+        - pacman
+        - curl
+        - go
+        - git
+        - cni
+        - oh-my-zsh
       
     - name: Display upgrade results
       debug:
@@ -44,7 +50,6 @@
         - curl
 
     - name: Install Go packages
-      become: false
       shell: "go install {{ item }}"
       loop: "{{ go_packages }}"
       environment:
@@ -61,3 +66,6 @@
       tags:
        - cni
 
+    - import_tasks: oh-my-zsh.yml
+      tags:
+       - oh-my-zsh

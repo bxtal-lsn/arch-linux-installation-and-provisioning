@@ -1,17 +1,25 @@
 ---
 - name: create cni dir if not exists
+  become: true
   ansible.builtin.file:
     path: /opt/cni/bin
     state: directory
     mode: '0755'
 
 - name: Download CNI plugins
+  become: true
   get_url:
     url: https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
     dest: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
     mode: "0644"
+    timeout: 120
+  retries: 3
+  delay: 5
+  register: download_result
+  until: download_result is succeeded
 
 - name: Extract CNI plugins
+  become: true
   unarchive:
     src: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
     dest: /opt/cni/bin
@@ -19,12 +27,14 @@
     creates: /opt/cni/bin/bridge
 
 - name: Set execute permissions
+  become: true
   ansible.builtin.file:
     path: /opt/cni/bin
     mode: "0755"
     recurse: true
 
 - name: Clean up archive
+  become: true
   ansible.builtin.file:
     path: /tmp/cni-plugins-linux-amd64-v1.1.1.tgz
     state: absent
