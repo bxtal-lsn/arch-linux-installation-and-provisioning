@@ -44,6 +44,7 @@
         - pacman
     
     - name: Run curl installations
+      become: true
       shell: "{{ item }}"
       loop: "{{ curl_commands }}"
       tags:
