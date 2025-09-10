@@ -5,6 +5,7 @@
   vars_files:
     - pacman.yml
     - curl.yml
+    - sudo-curl.yml
     - go.yml
   
   tasks:
@@ -44,11 +45,18 @@
         - pacman
     
     - name: Run curl installations
-      become: true
       shell: "{{ item }}"
       loop: "{{ curl_commands }}"
       tags:
         - curl
+
+    - name: Run sudo curl installations
+      become: true
+      shell: "{{ item }}"
+      loop: "{{ sudo_curl_commands }}"
+      tags:
+        - curl
+
 
     - name: Install Go packages
       shell: "go install {{ item }}"

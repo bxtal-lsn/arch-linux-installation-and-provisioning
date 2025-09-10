@@ -1,0 +1,5 @@
+---
+sudo_curl_commands:
+  - "curl -sSf https://atlasgo.sh | sh -s -- --community -y"
+  - "curl -sS https://starship.rs/install.sh | sh -s -- -y"
+
