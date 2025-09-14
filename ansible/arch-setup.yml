@@ -31,6 +31,7 @@
         - update
         
     - name: Install specified packages with pacman
+      become: true
       community.general.pacman:
         name: "{{ packages }}"
         state: present
@@ -78,3 +79,7 @@
     - import_tasks: oh-my-zsh.yml
       tags:
        - oh-my-zsh
+
+    - import_tasks: rust-cargo.yml
+      tags:
+        - cargo

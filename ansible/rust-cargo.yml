@@ -1,0 +1,3 @@
+- name: Install SQLx
+  ansible.builtin.shell:
+    cmd: cargo install sqlx-cli

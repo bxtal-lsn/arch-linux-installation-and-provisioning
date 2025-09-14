@@ -50,6 +50,7 @@ packages:
  - jujutsu
  - python-pipx
  - uv
+ - npm
 
 # ---------------------------- #
 # System and Network Utilities #
