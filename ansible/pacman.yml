@@ -73,6 +73,7 @@ packages:
  - impala
  - tlp
  - syncthing
+ - acpi
 
 # -------- #
 # Database #
