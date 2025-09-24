@@ -6,6 +6,7 @@
     - pacman.yml
     - curl.yml
     - sudo-curl.yml
+    - npm.yml
     - go.yml
   
   tasks:
@@ -19,6 +20,7 @@
         - update
         - pacman
         - curl
+        - npm
         - go
         - git
         - cni
@@ -57,6 +59,14 @@
       loop: "{{ sudo_curl_commands }}"
       tags:
         - curl
+
+    - name: Run npm installations
+      become: true
+      shell: "{{ item }}"
+      loop: "{{ npm_commands }}"
+      tags:
+        - npm
+
 
 
     - name: Install Go packages

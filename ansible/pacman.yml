@@ -47,10 +47,15 @@ packages:
  - stylua
  - ghostty
  - go-task
+ - gopls
+ - pyright
  - jujutsu
  - python-pipx
  - uv
  - npm
+ - rust-analyzer
+ - lua-language-server
+ - typescript-language-server
 
 # ---------------------------- #
 # System and Network Utilities #

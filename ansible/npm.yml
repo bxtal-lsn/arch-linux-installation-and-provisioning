@@ -1,0 +1,3 @@
+---
+npm_commands:
+  - "npm install -g emmet-language-server"

@@ -1,3 +1,7 @@
 - name: Install SQLx
   ansible.builtin.shell:
     cmd: cargo install sqlx-cli
+
+- name: Install rust-analyzer
+  ansible.builtin.shell:
+    cmd: rustup component add rust-analyzer
